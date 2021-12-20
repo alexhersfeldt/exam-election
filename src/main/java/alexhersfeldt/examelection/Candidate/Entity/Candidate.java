@@ -29,4 +29,9 @@ public class Candidate {
     @JoinColumn(name = "party_id", referencedColumnName = "id")
     private Party party;
 
+    public Candidate(String name, int votes, Party party) {
+        this.name = name;
+        this.votes = votes;
+        this.party = party;
+    }
 }

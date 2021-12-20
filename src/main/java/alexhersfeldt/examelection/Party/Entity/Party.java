@@ -31,4 +31,9 @@ public class Party {
     @JsonIgnore
     @OneToMany(mappedBy = "party")
     private Set<Candidate> candidates;
+
+    public Party(String name, String symbol) {
+        this.name = name;
+        this.symbol = symbol;
+    }
 }

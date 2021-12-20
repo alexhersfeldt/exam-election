@@ -8,6 +8,7 @@ import alexhersfeldt.examelection.Candidate.Repo.CandidateRepo;
 import alexhersfeldt.examelection.Party.DTO.PartyDTO;
 import alexhersfeldt.examelection.Party.Entity.Party;
 import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,11 +18,9 @@ public class CandidateServiceImpl implements CandidateService {
 
     CandidateRepo repo;
     ModelMapper modelMapper;
-    CandidateService service;
 
-    public CandidateServiceImpl(CandidateRepo repo, CandidateService service) {
+    public CandidateServiceImpl(CandidateRepo repo) {
         this.repo = repo;
-        this.service = service;
         modelMapper = new ModelMapper();
     }
 

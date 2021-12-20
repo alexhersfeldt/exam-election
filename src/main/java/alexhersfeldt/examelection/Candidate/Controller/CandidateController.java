@@ -21,11 +21,9 @@ public class CandidateController {
 
 
     @Autowired
-    CandidateServiceImpl candidateService;
+    CandidateService candidateService;
     @Autowired
-    PartyServiceImpl partyService;
-
-
+    PartyService partyService;
 
 
     @GetMapping("/{id}")
@@ -37,15 +35,15 @@ public class CandidateController {
     }
 
     @GetMapping("/all")
-    private ResponseEntity<?> getCandidates() {
+    private ResponseEntity<?> getAllCandidates() {
         return new ResponseEntity<>(
                 candidateService.getAllCandidates(),
                 HttpStatus.OK
         );
     }
 
-    @GetMapping("/party-{id}")
-    private ResponseEntity<?> getCandidatesByParty(@PathVariable int id) {
+    @GetMapping("/party/{id}")
+    private ResponseEntity<?> getAllCandidatesByParty(@PathVariable int id) {
         return new ResponseEntity<>(
                 candidateService.getAllCandidatesByParty(partyService.getById(id)),
                 HttpStatus.OK
