@@ -1,6 +1,6 @@
 package alexhersfeldt.examelection.Candidate.DTO;
 
-import alexhersfeldt.examelection.Party.Entity.Party;
+import alexhersfeldt.examelection.Party.DTO.PartyDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,5 +8,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class CandidateDTO {
     String name;
-    Party party;
+    PartyDTO partyDTO;
 }

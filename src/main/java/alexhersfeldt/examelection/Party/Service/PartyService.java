@@ -1,4 +1,7 @@
 package alexhersfeldt.examelection.Party.Service;
 
-public class PartyService {
+import alexhersfeldt.examelection.Party.DTO.PartyDTO;
+
+public interface PartyService {
+    PartyDTO getById(int id);
 }

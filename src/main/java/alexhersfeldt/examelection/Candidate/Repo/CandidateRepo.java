@@ -1,6 +1,8 @@
 package alexhersfeldt.examelection.Candidate.Repo;
 
+import alexhersfeldt.examelection.Candidate.DTO.CandidateDTO;
 import alexhersfeldt.examelection.Candidate.Entity.Candidate;
+import alexhersfeldt.examelection.Party.DTO.PartyDTO;
 import alexhersfeldt.examelection.Party.Entity.Party;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
