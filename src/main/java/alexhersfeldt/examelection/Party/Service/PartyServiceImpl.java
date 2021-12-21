@@ -17,15 +17,12 @@ public class PartyServiceImpl implements PartyService{
 
     @Override
     public PartyDTO getById(int id) {
-        return modelMapper.map(repo.getById(id), PartyDTO.class);
+        Party party = repo.findById(id);
+        return modelMapper.map(party, PartyDTO.class);
     }
 
     @Override
-    public List<PartyDTO> getAllParties() {
-        List<Party> parties = repo.findAll();
-        return parties
-                .stream()
-                .map(party -> modelMapper.map(party, PartyDTO.class))
-                .collect(Collectors.toList());
+    public List<Party> getAll() {
+        return repo.findAll();
     }
 }

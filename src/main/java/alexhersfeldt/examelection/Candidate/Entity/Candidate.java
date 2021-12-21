@@ -26,12 +26,7 @@ public class Candidate {
     private int votes;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "party_id", referencedColumnName = "id")
+    @JoinColumn(name = "partyId", referencedColumnName = "id")
     private Party party;
 
-    public Candidate(String name, int votes, Party party) {
-        this.name = name;
-        this.votes = votes;
-        this.party = party;
-    }
 }

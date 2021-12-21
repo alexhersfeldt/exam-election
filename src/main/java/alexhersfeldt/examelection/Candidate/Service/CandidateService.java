@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CandidateService {
     CandidateDTO getCandidate(int id);
-    List<CandidateDTO> getAllCandidatesByParty(PartyDTO partydto);
+    List<CandidateDTO> getAllCandidatesByPartyId(int id);
     List<CandidateDTO> getAllCandidates();
     AddCandidateDTO addCandidate(AddCandidateDTO dto);
     EditCandidateDTO editCandidate(EditCandidateDTO dto, int id);

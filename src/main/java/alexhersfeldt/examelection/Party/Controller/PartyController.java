@@ -19,9 +19,9 @@ public class PartyController {
     PartyService partyService;
 
     @GetMapping(path = "/all")
-    private ResponseEntity<?> getAllParties() {
+    public ResponseEntity<?> getAllParties() {
         return new ResponseEntity<>(
-                partyService.getAllParties(),
+                partyService.getAll(),
                 HttpStatus.OK
         );
     }

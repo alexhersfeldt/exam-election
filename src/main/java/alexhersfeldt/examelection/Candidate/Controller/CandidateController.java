@@ -27,7 +27,7 @@ public class CandidateController {
 
 
     @GetMapping("/{id}")
-    private ResponseEntity<?> getCandidate(@PathVariable int id) {
+    public ResponseEntity<?> getCandidate(@PathVariable int id) {
         return new ResponseEntity<>(
                 candidateService.getCandidate(id),
                 HttpStatus.OK
@@ -35,7 +35,7 @@ public class CandidateController {
     }
 
     @GetMapping("/all")
-    private ResponseEntity<?> getAllCandidates() {
+    public ResponseEntity<?> getAllCandidates() {
         return new ResponseEntity<>(
                 candidateService.getAllCandidates(),
                 HttpStatus.OK
@@ -43,15 +43,15 @@ public class CandidateController {
     }
 
     @GetMapping("/party/{id}")
-    private ResponseEntity<?> getAllCandidatesByParty(@PathVariable int id) {
+    public ResponseEntity<?> getAllCandidatesByParty(@PathVariable int id) {
         return new ResponseEntity<>(
-                candidateService.getAllCandidatesByParty(partyService.getById(id)),
+                candidateService.getAllCandidatesByPartyId(id),
                 HttpStatus.OK
                 );
     }
 
     @PostMapping("/add")
-    private ResponseEntity<?> addCandidate(@RequestBody AddCandidateDTO dto) {
+    public ResponseEntity<?> addCandidate(@RequestBody AddCandidateDTO dto) {
         return new ResponseEntity<>(
                 candidateService.addCandidate(dto),
                 HttpStatus.CREATED
@@ -59,7 +59,7 @@ public class CandidateController {
     }
 
     @PutMapping("/edit/{id}")
-    private ResponseEntity<?> editCandidate(@RequestBody EditCandidateDTO dto, @PathVariable int id) {
+    public ResponseEntity<?> editCandidate(@RequestBody EditCandidateDTO dto, @PathVariable int id) {
         return new ResponseEntity<>(
                 candidateService.editCandidate(dto, id),
                 HttpStatus.OK
@@ -67,7 +67,7 @@ public class CandidateController {
     }
 
     @DeleteMapping("/delete/{id}")
-    private void deleteCandidate(@PathVariable int id){
+    public void deleteCandidate(@PathVariable int id){
         candidateService.deleteCandidate(id);
         }
 

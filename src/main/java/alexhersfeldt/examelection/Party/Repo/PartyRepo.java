@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface PartyRepo extends JpaRepository<Party, Integer> {
     Party findById(int id);
-    List<Party> findAll();
     Party findByName(String name);
     Party findBySymbol(String symbol);
 }

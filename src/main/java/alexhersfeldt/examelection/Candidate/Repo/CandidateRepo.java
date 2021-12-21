@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface CandidateRepo extends JpaRepository<Candidate, Integer> {
     Candidate findById(int id);
-    List<Candidate> findAllByParty(Party party);
+    List<Candidate> findAllByPartyId(int id);
     List<Candidate> findAll();
 
 }
